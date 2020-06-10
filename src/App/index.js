@@ -33,7 +33,7 @@ class App extends React.Component {
 
   convertToColon = () => {
     const lines = this.state.input.split("\n").filter(x => !!x);
-    const output = lines.join(", ");
+    const output = lines.join(",");
     this.setState({
       output
     });
@@ -41,7 +41,7 @@ class App extends React.Component {
 
   convertToColonAndQuote = () => {
     const lines = this.state.input.split("\n").filter(x => !!x);
-    const output = `'${lines.join("', '")}'`;
+    const output = `'${lines.join("','")}'`;
     this.setState({
       output
     });
