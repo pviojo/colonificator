@@ -47,6 +47,14 @@ class App extends React.Component {
     });
   };
 
+  convertToColonAndDoubleQuote = () => {
+    const lines = this.state.input.split("\n").filter(x => !!x);
+    const output = `'${lines.join('","')}'`;
+    this.setState({
+      output
+    });
+  };
+
   render() {
     const { input, output } = this.state;
     return (
@@ -74,6 +82,9 @@ class App extends React.Component {
               </Button>
               <Button variant="solid" onClick={this.convertToColonAndQuote}>
                 Comma separated + single quotes
+              </Button>
+              <Button variant="solid" onClick={this.convertToColonAndDoubleQuote}>
+                Comma separated + double quotes
               </Button>
             </Box>
             <Box>
