@@ -63,6 +63,9 @@ class App extends React.Component {
         <div className={styles.main}>
           <Box p={8}>
             <Box pb={8}>
+              <big><strong>Copy a list of items/rows and convert them to a , separated string.</strong></big>
+              <small>Useful for queries et al.</small>
+          
               <FormControl>
                 <FormLabel>Input</FormLabel>
                 <FormErrorMessage>Error message</FormErrorMessage>
