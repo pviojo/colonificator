@@ -25,14 +25,14 @@ class App extends React.Component {
     };
   }
 
-  setInput = value => {
+  setInput = (value) => {
     this.setState({
       input: value
     });
   };
 
   convertToColon = () => {
-    const lines = this.state.input.split("\n").filter(x => !!x);
+    const lines = this.state.input.split("\n").filter((x) => !!x);
     const output = lines.join(",");
     this.setState({
       output
@@ -40,7 +40,7 @@ class App extends React.Component {
   };
 
   convertToColonAndQuote = () => {
-    const lines = this.state.input.split("\n").filter(x => !!x);
+    const lines = this.state.input.split("\n").filter((x) => !!x);
     const output = `'${lines.join("','")}'`;
     this.setState({
       output
@@ -48,7 +48,7 @@ class App extends React.Component {
   };
 
   convertToColonAndDoubleQuote = () => {
-    const lines = this.state.input.split("\n").filter(x => !!x);
+    const lines = this.state.input.split("\n").filter((x) => !!x);
     const output = `'${lines.join('","')}'`;
     this.setState({
       output
@@ -63,9 +63,17 @@ class App extends React.Component {
         <div className={styles.main}>
           <Box p={8}>
             <Box pb={8}>
-              <big><strong>Copy a list of items/rows and convert them to a , separated string.</strong></big>
+              <big>
+                <strong>
+                  Copy a list of items/rows and convert them to a comma
+                  separated string.
+                </strong>
+              </big>
+              <br />
               <small>Useful for queries et al.</small>
-          
+              <br />
+              <br />
+
               <FormControl>
                 <FormLabel>Input</FormLabel>
                 <FormErrorMessage>Error message</FormErrorMessage>
@@ -74,7 +82,7 @@ class App extends React.Component {
                   resize="horizontal"
                   style={{ height: "15rem" }}
                   value={input}
-                  onChange={e => this.setInput(e.target.value)}
+                  onChange={(e) => this.setInput(e.target.value)}
                 />
                 <FormHelperText>One item per line</FormHelperText>
               </FormControl>
@@ -83,10 +91,17 @@ class App extends React.Component {
               <Button variant="solid" onClick={this.convertToColon} mr={4}>
                 Comma separated
               </Button>
-              <Button variant="solid" onClick={this.convertToColonAndQuote} mr={4}>
+              <Button
+                variant="solid"
+                onClick={this.convertToColonAndQuote}
+                mr={4}
+              >
                 Comma separated + single quotes
               </Button>
-              <Button variant="solid" onClick={this.convertToColonAndDoubleQuote}>
+              <Button
+                variant="solid"
+                onClick={this.convertToColonAndDoubleQuote}
+              >
                 Comma separated + double quotes
               </Button>
             </Box>
