@@ -80,7 +80,7 @@ class App extends React.Component {
               <Button variant="solid" onClick={this.convertToColon} mr={4}>
                 Comma separated
               </Button>
-              <Button variant="solid" onClick={this.convertToColonAndQuote}>
+              <Button variant="solid" onClick={this.convertToColonAndQuote} mr={4}>
                 Comma separated + single quotes
               </Button>
               <Button variant="solid" onClick={this.convertToColonAndDoubleQuote}>
