@@ -49,7 +49,7 @@ class App extends React.Component {
 
   convertToColonAndDoubleQuote = () => {
     const lines = this.state.input.split("\n").filter((x) => !!x);
-    const output = `'${lines.join('","')}'`;
+    const output = `"${lines.join('","')}"`;
     this.setState({
       output
     });
