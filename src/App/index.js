@@ -15,6 +15,8 @@ import {
 
 import styles from "./index.module.css";
 
+const separator = new RegExp(/[\n,]+/);
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -30,8 +32,6 @@ class App extends React.Component {
       input: value
     });
   };
-
-  const separator = new RegExp(/[\n,]+/);
 
   convertToColon = () => {
     const lines = this.state.input.split(separator).filter((x) => !!x);
