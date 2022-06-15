@@ -31,8 +31,10 @@ class App extends React.Component {
     });
   };
 
+  const separator = new RegExp(/[\n,]+/);
+
   convertToColon = () => {
-    const lines = this.state.input.split("\n").filter((x) => !!x);
+    const lines = this.state.input.split(separator).filter((x) => !!x);
     const output = lines.join(",");
     this.setState({
       output
@@ -40,7 +42,7 @@ class App extends React.Component {
   };
 
   convertToColonAndQuote = () => {
-    const lines = this.state.input.split("\n").filter((x) => !!x);
+    const lines = this.state.input.split(separator).filter((x) => !!x);
     const output = `'${lines.join("','")}'`;
     this.setState({
       output
@@ -48,7 +50,7 @@ class App extends React.Component {
   };
 
   convertToColonAndDoubleQuote = () => {
-    const lines = this.state.input.split("\n").filter((x) => !!x);
+    const lines = this.state.input.split(separator).filter((x) => !!x);
     const output = `"${lines.join('","')}"`;
     this.setState({
       output
